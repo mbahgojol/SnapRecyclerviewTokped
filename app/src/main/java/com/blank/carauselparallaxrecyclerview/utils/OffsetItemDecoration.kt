@@ -14,7 +14,7 @@ class OffsetItemDecoration : RecyclerView.ItemDecoration() {
         super.getItemOffsets(outRect, view, parent, state)
         when {
             parent.getChildAdapterPosition(view) == 0 -> {
-                setupOutRect(outRect, 8.dp, false)
+                setupOutRect(outRect, 8.dp, true)
             }
             parent.getChildAdapterPosition(view) == parent.adapter?.itemCount?.minus(1) -> {
                 setupOutRect(outRect, 8.dp, true)

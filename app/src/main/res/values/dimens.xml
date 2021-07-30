@@ -27,4 +27,5 @@
     <dimen name="size_9dp">9dp</dimen>
     <dimen name="size_40dp">40dp</dimen>
     <dimen name="text_size_18sp">18sp</dimen>
+    <dimen name="size_134dp">134dp</dimen>
 </resources>
