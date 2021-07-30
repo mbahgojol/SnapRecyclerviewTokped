@@ -24,7 +24,7 @@ Ganti Recyclerview kamu dengan klas yang akuh buat yaitu BlankHorizontalScrollVi
         android:layout_height="match_parent"/>
 ```
 
-### Pewarisan ke BlankSnapAdapter
+### Buat BlankHorizontalScrollView di XML
 Buat adapter trus extends nya ke BlankSnapAdapter ya kayak dibawah ini
 
 ```java
