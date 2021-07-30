@@ -14,6 +14,12 @@ class BlankHorizontalScrollView @JvmOverloads constructor(
 ) : RecyclerView(context, attrs, defStyleAttr) {
 
     private val targetViewToTransforms = arrayListOf<View>()
+    private var margin = 8
+
+    fun setMarginItem(margin: Int) {
+        this.margin = margin
+        addItemDecoration(OffsetItemDecoration(margin))
+    }
 
     fun addViewTransforms(v: View) {
         targetViewToTransforms.add(v)
@@ -58,7 +64,7 @@ class BlankHorizontalScrollView @JvmOverloads constructor(
     init {
         layoutManager = linearLayoutManager
         isNestedScrollingEnabled = false
-        addItemDecoration(OffsetItemDecoration())
+        addItemDecoration(OffsetItemDecoration(margin))
         val snapHelper =
             StartSnapHelper()
         snapHelper.attachToRecyclerView(this)
