@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CarauselParallaxRecyclerview</string>
+    <string name="rekomendasi">rekomendasi</string>
+    <string name="grade">Grade</string>
+    <string name="muat_ulang">Muat Ulang</string>
+    <string name="flash_nauction">Flash \nAuction</string>
+    <string name="lihat_semua">Lihat Semua</string>
+</resources>

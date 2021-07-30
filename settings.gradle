@@ -1,0 +1,2 @@
+rootProject.name = "CarauselParallaxRecyclerview"
+include ':app'
