@@ -14,7 +14,7 @@ Snap Horizontal Recyclerview Like Tokopedia Ecommers
 - di AndroidStudio pilih File -> New -> Import Module
 - Arahin ke clone project akuh
 
-### Pewarisan ke BlankSnapAdapter
+### Buat BlankHorizontalScrollView di XML
 Ganti Recyclerview kamu dengan klas yang akuh buat yaitu BlankHorizontalScrollView
 
 ```java
@@ -24,7 +24,7 @@ Ganti Recyclerview kamu dengan klas yang akuh buat yaitu BlankHorizontalScrollVi
         android:layout_height="match_parent"/>
 ```
 
-### Buat BlankHorizontalScrollView di XML
+### Pewarisan ke BlankSnapAdapter
 Buat adapter trus extends nya ke BlankSnapAdapter ya kayak dibawah ini
 
 ```java
