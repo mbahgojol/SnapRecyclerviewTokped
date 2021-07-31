@@ -1,5 +1,5 @@
 package com.blank.carauselparallaxrecyclerview.utils
 
-enum class ViewTypeItem {
-    EMPTY, HAVEDATA
+enum class ViewTypeItem(i: Int) {
+    EMPTY(-1)
 }

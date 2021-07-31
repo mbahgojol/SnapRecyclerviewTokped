@@ -21,16 +21,24 @@ abstract class BlankSnapAdapter<T : RecyclerView.ViewHolder> :
     abstract fun initViewHolder(parent: ViewGroup, viewType: Int): T
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        if (position > 0)
+        if (position > 0) {
             ngeBindViewHolder(holder as T, position.minus(1))
+        }
     }
 
     abstract fun ngeBindViewHolder(holder: T, position: Int)
 
+    open fun multiViewType(position: Int): Int {
+        return position.plus(1)
+    }
+
     override fun getItemViewType(position: Int): Int {
         return when (position) {
             0 -> ViewTypeItem.EMPTY.ordinal
-            else -> ViewTypeItem.HAVEDATA.ordinal
+            else -> if (multiViewType(position.minus(1)) == 0)
+                position
+            else
+                multiViewType(position.minus(1))
         }
     }
 
