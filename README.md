@@ -48,6 +48,47 @@ class AdapterKamuh : BlankSnapAdapter<AdapterKamuh.ViewHolderKamuh>() {
 }
 ```
 
+### Multi ViewType Di Library akuh
+Panggil method multiViewType disitu kamu cek viewType viewType kamu, contohnya gini
+
+```java
+class AdapterKamuh : BlankSnapAdapter<RecyclerView.ViewHolder>() {
+
+                       private val viewTypeLihatSemua = 100
+                       private val viewTypeData = 110
+
+                       override fun initViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+                           return when (viewType) {
+                               viewTypeLihatSemua -> LihatSemuaViewHolder(
+                                   LayoutInflater.from(parent.context).inflate(R.layout.item_lihatsemua, parent, false)
+                               )
+                               else -> ViewHolder(
+                                   LayoutInflater.from(parent.context).inflate(R.layout.item_card_view, parent, false)
+                               )
+                           }
+                       }
+
+
+                       override fun ngeBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+                           holder.itemView.setOnClickListener {
+                               Log.e("Posisi", position.toString())
+                           }
+                       }
+
+                       override fun multiViewType(position: Int): Int {
+                           return when (position) {
+                               itemCount().minus(1) -> viewTypeLihatSemua
+                               else -> viewTypeData
+                           }
+                       }
+
+                       override fun itemCount(): Int = 10
+
+                       class ViewHolder(v: View) : RecyclerView.ViewHolder(v)
+                       class LihatSemuaViewHolder(v: View) : RecyclerView.ViewHolder(v)
+                   }
+```
+
 - Trus kalo udah set adapter, panggil method addTransformsView dan masukin view view yang mau dikasih animasi
 - Duar!! beres deh.
 
